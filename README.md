@@ -33,6 +33,27 @@ new Vue({
 })
 ```
 
+- AMD
+
+```js
+define(['vue-component-seed'], function(VueComponentSeed) { var hello = VueComponentSeed.hello; ... });
+```
+- Browser globals
+
+```
+<hello></hello>
+
+<script src="path/to/vue.js"></script>
+<script src="path/to/vue-component-seed.js"></script>
+<script>
+  new Vue({
+    components: {
+      hello: VueComponentSeed.hello
+    }
+  })
+</script>
+```
+
 ## 如何搭建开发环境
 
 只需以下命令即可：
@@ -65,3 +86,5 @@ npm run release
 2. 图片，font字体等静态资源问题
 
 3. 把webpack生成的一些公共代码抽离出来，减少组件大小
+
+4. 把组件的文档与开发example合二为一

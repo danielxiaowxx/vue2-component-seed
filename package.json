@@ -50,7 +50,6 @@
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.1"
   },
-  "repository": "git@github.com:danielxiaowxx/vue-component-seed.git",
   "scripts": {
     "dev": "gulp dev",
     "release": "NODE_ENV=production gulp build",
