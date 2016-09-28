@@ -7,7 +7,8 @@ var config = require('./config');
 module.exports = {
 
   entry: {
-    'vue-component-seed': path.join(config.src, 'index.js')
+    'vue-component': path.join(config.src, 'components', 'index.js'),
+    'vue-directive': path.join(config.src, 'directives', 'index.js')
   },
 
   output: {

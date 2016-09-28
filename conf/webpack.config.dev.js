@@ -6,8 +6,10 @@ var config = require('./config');
 // webpack.config.js
 module.exports = {
   entry: {
-    hello: path.join(config.src, 'hello', 'index.vue'),
+    hello: path.join(config.src, 'components', 'hello', 'index.vue'),
     // Don't touch me
+
+    demo: path.join(config.src, 'directives', 'demo', 'index.js')
   },
 
   output: {

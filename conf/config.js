@@ -8,6 +8,6 @@ var root = process.cwd();
 
 module.exports = {
   root: root,
-  src: path.join(root, '/src'),
-  dist: path.join(root, '/dist')
+  src: path.join(root, 'src'),
+  dist: path.join(root, 'dist')
 };
