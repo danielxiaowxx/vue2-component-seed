@@ -47,7 +47,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel!eslint',
-        include: [config.src]
+        include: [config.src].concat(config.babelModules)
       },
       {
         // edit this for additional asset file types
