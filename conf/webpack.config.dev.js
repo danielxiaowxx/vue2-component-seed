@@ -7,9 +7,10 @@ var config = require('./config');
 module.exports = {
   entry: {
     hello: path.join(config.src, 'components', 'hello', 'index.vue'),
-    // Don't touch me
+    // Don't touch me - components
 
     demo: path.join(config.src, 'directives', 'demo', 'index.js')
+    // Don't touch me - directives
   },
 
   output: {
