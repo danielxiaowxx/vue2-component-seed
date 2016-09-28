@@ -13,7 +13,7 @@ npm install vue-component-seed
 - CommonJS
 
 ```js
-var hello = require('vue-component-seed/src/hello');
+var hello = require('vue-component-seed/src/components/hello');
 
 new Vue({
   components: {
@@ -24,7 +24,7 @@ new Vue({
 - ES6
 
 ```js
-import hello from 'vue-component-seed/src/hello'
+import hello from 'vue-component-seed/src/components/hello'
 
 new Vue({
   components: {
@@ -36,7 +36,7 @@ new Vue({
 - AMD
 
 ```js
-define(['vue-component-seed'], function(VueComponentSeed) { var hello = VueComponentSeed.hello; ... });
+define(['vue-component-seed'], function(VueComponentSeed) { var hello = VueComponentSeed.components.hello; ... });
 ```
 - Browser globals
 
@@ -48,7 +48,7 @@ define(['vue-component-seed'], function(VueComponentSeed) { var hello = VueCompo
 <script>
   new Vue({
     components: {
-      hello: VueComponentSeed.hello
+      hello: VueComponentSeed.components.hello
     }
   })
 </script>
@@ -61,12 +61,19 @@ define(['vue-component-seed'], function(VueComponentSeed) { var hello = VueCompo
 npm run dev
 ```
 
-## 如何增加一个组件
+## 如何增加一个组件(component)
 
 ```sh
-yo vc:add-comp [component name]
+yo vue-comp:add-comp
 ```
-在启动开发服务下，可以打开开发链接（http://localhost:3000/examples/[component name]/index.html）进行预览
+在启动开发服务下，可以打开开发链接（http://localhost:3000/examples/components/[component name]/index.html）进行预览
+
+## 如何增加一个指令(directive)
+
+```sh
+yo vue-comp:add-directive
+```
+在启动开发服务下，可以打开开发链接（http://localhost:3000/examples/directives/[directive name]/index.html）进行预览
 
 ## 如何发布组件项目
 
