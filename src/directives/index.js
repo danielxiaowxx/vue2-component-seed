@@ -1,9 +1,5 @@
-/**
- * Created by danie on 2016/9/11.
- */
 
-import demo from './demo/demo';
+import './demo/index';
+// Don't touch me - import
 
-module.exports = {
-  demo,
-};
+
