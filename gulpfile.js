@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var path = require('path');
 var rm = require('rimraf');
+var fs = require('fs');
 var webpack = require('webpack');
 var notify = require('gulp-notify');
 var gulpSequence = require('gulp-sequence');
+var childProcess = require('child_process');
 var browserSync = require('browser-sync').create();
 
 var config = require('./conf/config');
@@ -44,6 +46,16 @@ gulp.task('watch', () => {
   });
 });
 
+function publish() {
+  var pkg = require('./package.json');
+  var [major, minor, revision] = pkg.version.split('.');
+  pkg.version = [major, minor, parseInt(revision, 10) + 1].join('.'); // TODO Daniel: 暂时只自动更新最小版本
+  fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2), 'utf8');
+
+  // Only tag on master branch
+  childProcess.exec(`git checkout master && git pull origin master && gulp build && git add . && git commit -m "publish" && git push origin master && git tag ${pkg.version} && git push origin ${pkg.version}`);
+}
+
 gulp.task('serve', () => {
 
   function startServer() {
@@ -79,6 +91,8 @@ gulp.task('serve', () => {
 });
 
 gulp.task('build', gulpSequence('clean', ['webpack']));
+
+gulp.task('publish', publish);
 
 gulp.task('dev', gulpSequence('build', ['serve', 'watch']));
 
