@@ -1,7 +1,7 @@
 {
-  "name": "vue-component-seed",
+  "name": "vue2-component-seed",
   "version": "0.0.1",
-  "description": "vue component seed project",
+  "description": "vue v2 component seed project",
   "homepage": "",
   "author": {
     "name": "Daniel.Xiao",
@@ -57,7 +57,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "vue": "^1.0.26",
+    "vue": "^2.1.8",
     "vue-resource": "^1.0.1",
     "lodash-es": "^4.16.2",
     "va-commonjs": "git+http://daniel.xiao@gitlab.tools.vipshop.com/daniel.xiao/va-commonjs.git"

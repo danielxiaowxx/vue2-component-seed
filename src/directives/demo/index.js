@@ -6,19 +6,16 @@ import Vue from 'vue';
 import _assign from 'lodash-es/assign';
 
 Vue.directive('demo', {
-  bind() {
-    
-  },
-  update(options) {
+  bind(el, binding) {
     var defOptions = {
       msg: 'Hello',
     };
 
-    options = _assign(defOptions, options);
+    var options = _assign(defOptions, binding.value);
 
-    this.el.innerText = options.msg;
+    el.innerText = options.msg;
   },
   unbind() {
-
+    console.log('unbind')
   }
 });
