@@ -1,9 +1,10 @@
 
 module.exports = {
   // route: data | get data function
-  '/api/test/getName': () => {
+  '/api/test/getName': (params) => {
     return {
-      name: 'Daniel'
+      name: 'Daniel',
+      params: params
     };
   },
   '/api/test/getMsg': {msg: 'Hello'}

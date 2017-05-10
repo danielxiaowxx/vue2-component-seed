@@ -6,6 +6,8 @@ var webpack = require('webpack');
 var notify = require('gulp-notify');
 var gulpSequence = require('gulp-sequence');
 var childProcess = require('child_process');
+var url = require('url');
+var querystring = require('querystring');
 var browserSync = require('browser-sync').create();
 
 var config = require('./conf/config');
@@ -72,10 +74,17 @@ gulp.task('serve', () => {
         return {
           route: route,
           handle: (req, res) => {
-            var resData = typeof mockConfig[route] === 'function' ? mockConfig[route]() : mockConfig[route];
-            res.write(typeof resData === 'string' ? resData : JSON.stringify(resData));
-            res.end();
-            return;
+            var body = [];
+            req.on('data', function(chunk) {
+              body.push(chunk);
+            }).on('end', function() {
+              body = JSON.parse(Buffer.concat(body).toString() || '{}');
+              var query = querystring.parse(url.parse(req.url).query);
+              var params = Object.assign(body, query);
+              var resData = typeof mockConfig[route] === 'function' ? mockConfig[route](params) : mockConfig[route];
+              res.write(typeof resData === 'string' ? resData : JSON.stringify(resData));
+              res.end();
+            });
           }
         }
       })
