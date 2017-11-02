@@ -35,11 +35,11 @@
     "gulp-sequence": "^0.4.6",
     "map-stream": "0.0.6",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.3.2",
+    "node-sass": "^4.5.3",
     "postcss-loader": "^0.8.0",
     "postcss-sprites": "^4.0.0",
     "rimraf": "~2.5.0",
-    "sass-loader": "^3.1.2",
+    "sass-loader": "^6.0.6",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
@@ -57,8 +57,6 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^2.1.8",
-    "vue-resource": "^1.0.1",
-    "lodash-es": "^4.16.2",
-    "va-commonjs": "git+http://daniel.xiao@gitlab.tools.vipshop.com/daniel.xiao/va-commonjs.git"
+    "lodash-es": "^4.16.2"
   }
 }
