@@ -1,3 +1,4 @@
+
 export default {
   data () {
     return {
@@ -7,7 +8,7 @@ export default {
 
   methods: {
     getHello() {
-      this.$data.msg = 'Hello Daniel'
+      this.$data.msg = 'Hello Daniel';
     }
   }
 }

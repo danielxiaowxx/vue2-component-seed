@@ -28,12 +28,6 @@ module.exports = {
       commonjs2: 'vue',
       commonjs: 'vue',
       amd: 'vue'
-    },
-    'vue-resource': {
-      root: 'VueResource',
-      commonjs2: 'vue-resource',
-      commonjs: 'vue-resource',
-      amd: 'vue-resource'
     }
   },
 
@@ -42,7 +36,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue',
-        include: [config.src]
+        include: [config.src].concat(config.vueModules)
       },
       {
         test: /\.js$/,
@@ -59,7 +53,7 @@ module.exports = {
           // fallback to file-loader with this naming scheme
           name: 'img/[name].[ext]'
         },
-        include: [config.src]
+        include: [config.src].concat(config.vueModules)
       }
     ]
   },

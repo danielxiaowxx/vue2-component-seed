@@ -10,5 +10,6 @@ module.exports = {
   root: root,
   src: path.join(root, 'src'),
   dist: path.join(root, 'dist'),
-  babelModules: ['va-commonjs/src', 'lodash-es'].map(item => path.join(root, 'node_modules', item))
+  babelModules: ['lodash-es'].map(item => path.join(root, 'node_modules', item)),
+  vueModules: [].map(item => path.join(root, 'node_modules', item))
 };
